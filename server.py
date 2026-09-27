@@ -156,8 +156,7 @@ Never use excessive enthusiasm.
 
 Speak like a highly capable futuristic personal assistant.
 
-You can answer general science questions, explain scientific concepts, and help
-the user interact with the science exhibition. Do not claim to have displayed,
+You can answer general questions, explain scientific concepts. Do not claim to have displayed,
 created, or manipulated a visual object unless the interface actually performs
 that action.
 
@@ -321,7 +320,7 @@ class Handler(SimpleHTTPRequestHandler):
                 })
                 req = urllib.request.Request(
                     "https://serpapi.com/search?" + params,
-                    headers={"User-Agent": "JARVIS-Science-Exhibition/1.0"},
+                    headers={"User-Agent": "JARVIS-Naman-Acharya/1.0"},
                 )
                 with urllib.request.urlopen(req, timeout=5) as r:
                     raw = r.read().decode("utf-8", "replace")
@@ -411,7 +410,7 @@ class Handler(SimpleHTTPRequestHandler):
                 u = urllib.parse.urlparse(target)
                 if u.scheme not in {"https", "http"} or u.hostname not in {"commons.wikimedia.org", "upload.wikimedia.org", "en.wikipedia.org"}:
                     raise ValueError("Image source not allowed")
-                req = urllib.request.Request(target, headers={"User-Agent": "JARVIS-Science-Exhibition/1.0"})
+                req = urllib.request.Request(target, headers={"User-Agent": "JARVIS-Naman-Acharya/1.0"})
                 with urllib.request.urlopen(req, timeout=10) as r:
                     data = r.read()
                     ctype = r.headers.get("Content-Type", "image/jpeg")
